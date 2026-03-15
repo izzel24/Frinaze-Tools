@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react'
 import { ZodError } from 'zod'
 
 type QRType = "url" | "phone" | "email" | "wifi" | "whatsapp"
+type SecurityType = "WPA" | "WEP" | "nopass"
 type Props = {
   defaultType: QRType
 }
@@ -22,7 +23,7 @@ export default function QRGeneratorClient() {
   
   const [ssid, setSsid] = useState("")
   const [password, setPassword] = useState("")
-  const [security, setSecurity] = useState<"WPA" | "WEP" | "nopass">("WPA")
+  const [security, setSecurity] = useState<SecurityType>("WPA")
   
   const router = useRouter()
   const params = useParams()
@@ -225,7 +226,7 @@ export default function QRGeneratorClient() {
   
                   <select
                     value={security}
-                    onChange={(e) => setSecurity(e.target.value)}
+                    onChange={(e) => setSecurity(e.target.value as SecurityType)}
                     className="border p-3 rounded"
                   >
                     <option value="WPA">WPA/WPA2</option>
