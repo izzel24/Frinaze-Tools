@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Frinaze Tools",
-  description: "",
+  description: "Free online tools",
 };
 
 export default function RootLayout({
@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901853127666700"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body
         className={`${jakarta.className} antialiased`}
       >
