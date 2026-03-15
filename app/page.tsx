@@ -8,7 +8,7 @@ import { LuPhone } from "react-icons/lu"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Tools - QR Code Generator & Utilities",
+  title: "[Frinaze Tools] Free Online Tools - QR Code Generator & Utilities",
   description:
     "Free online tools to generate QR codes for URLs, WiFi, WhatsApp, email and phone numbers. Fast and simple.",
 }
