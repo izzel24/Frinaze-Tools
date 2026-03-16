@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-jakarta);
+  
 }
 
 button{
@@ -17,6 +22,8 @@ canvas{
 .tool-card {
   @apply flex flex-col items-center justify-center gap-2 p-6 bg-white rounded-xl shadow hover:shadow-lg transition text-center font-medium;
 }
+
+
 
 /* #range::-webkit-slider-thumb{
   background-color: black;

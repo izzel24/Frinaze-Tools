@@ -251,6 +251,82 @@ export default function QRGeneratorClient() {
         <div className='min-h-screen flex bg-white px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw] items-start py-10'>
           <QRCard Link={qrData} />
         </div>
+
+        <section className="bg-white px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw] py-20 flex flex-col gap-14">
+
+          <div className="flex flex-col gap-3">
+            <h2 className="text-[7vw] lg:text-[2.2vw] font-bold">
+              How to Create Your QR Code
+            </h2>
+
+            <p className="text-gray-600 text-[3.5vw] lg:text-[1.05vw] lg:w-[60%]">
+              Our QR Code Generator lets you easily create custom QR codes for links,
+              phone numbers, emails, WhatsApp messages, and WiFi access. You can also
+              customize the appearance of your QR code to match your brand.
+            </p>
+          </div>
+
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div className="border rounded-xl p-6 flex flex-col gap-2">
+              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">1</span>
+              <h3 className="font-semibold">Choose QR Type</h3>
+              <p className="text-gray-600 text-sm">
+                Select the type of QR code you want to generate such as URL,
+                phone number, email, WhatsApp, or WiFi access.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-6 flex flex-col gap-2">
+              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">2</span>
+              <h3 className="font-semibold">Enter Your Information</h3>
+              <p className="text-gray-600 text-sm">
+                Fill in the required details like a website link,
+                contact number, or network credentials.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-6 flex flex-col gap-2">
+              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">3</span>
+              <h3 className="font-semibold">Customize Your QR Code</h3>
+              <p className="text-gray-600 text-sm">
+                Personalize your QR code by adjusting colors, styles,
+                and even adding your own logo for branding.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-6 flex flex-col gap-2">
+              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">4</span>
+              <h3 className="font-semibold">Download & Use</h3>
+              <p className="text-gray-600 text-sm">
+                Download your QR code instantly and use it for marketing,
+                product packaging, business cards, or digital campaigns.
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* EXTRA INFO */}
+
+          <div className="flex flex-col gap-3 lg:w-[70%]">
+
+            <h3 className="text-xl font-semibold">
+              Customize Your QR Code
+            </h3>
+
+            <p className="text-gray-600">
+              With the Frinaze QR Code Generator, you can create visually
+              unique QR codes that match your brand identity. Customize
+              colors, shapes, and upload your own logo to place in the
+              center of the QR code. This makes your QR codes more engaging
+              and recognizable for customers.
+            </p>
+
+          </div>
+
+        </section>
       </main>
     )
 }
