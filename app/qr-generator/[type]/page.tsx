@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 import QRGeneratorClient from "./QRGeneratorClient"
+import Navbar from "@/component/Navbar"
+import Footer from "@/component/Footer"
 
 type Props = {
   params: { type: string }
@@ -74,5 +76,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function Page() {
-  return <QRGeneratorClient />
+  return (
+  <>
+    <Navbar />
+    <QRGeneratorClient />
+    <Footer />
+  </>
+)
 }

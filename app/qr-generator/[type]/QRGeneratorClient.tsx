@@ -16,6 +16,7 @@ type Props = {
 
 export default function QRGeneratorClient() {
     
+
   
   const [input, setInput] = useState("")
   const [subject, setSubject] = useState("")
@@ -70,7 +71,7 @@ export default function QRGeneratorClient() {
             )
             break
         }
-  
+        router.push("#qr-generate")
       } catch (err) {
         if(err instanceof ZodError){  
           showToast.error(err.issues[0].message, {
@@ -97,7 +98,7 @@ export default function QRGeneratorClient() {
     }
   
     return (
-      <main>
+      <main className='pt-[130px]'>
         <div className='min-h-[500px] py-[5vw] bg-linear-to-b from-[#ffffff] to-[#3265f224] flex flex-col gap-10 justify-center px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw]'>
   
           <div className='flex flex-col gap-2'>
@@ -248,7 +249,7 @@ export default function QRGeneratorClient() {
           </div>
         </div>
 
-        <div className='min-h-screen flex bg-white px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw] items-start py-10'>
+        <div id='qr-generate' className='min-h-screen flex bg-white px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw] items-start py-10'>
           <QRCard Link={qrData} />
         </div>
 

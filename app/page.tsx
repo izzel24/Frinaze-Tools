@@ -3,6 +3,8 @@ import { HiOutlineQrcode } from "react-icons/hi"
 import { Metadata } from "next"
 import { PiSwap } from "react-icons/pi"
 import { RiLockPasswordFill } from "react-icons/ri"
+import Footer from "@/component/Footer"
+import Navbar from "@/component/Navbar"
 
 export const metadata: Metadata = {
   title: "Frinaze Tools - Free Online Tools",
@@ -12,6 +14,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
+    <>
+    <Navbar />
     <main className="flex flex-col">
 
 
@@ -150,7 +154,7 @@ export default function Home() {
 
       </section>
 
-      <section className="py-24 bg-blue-700 text-white text-center flex flex-col gap-6 px-[6vw]">
+      <section id="about" className="py-24 bg-blue-700 text-white text-center flex flex-col gap-6 px-[6vw]">
 
         <h2 className="text-[6vw] lg:text-[2.2vw] font-bold">
           Built to Support Businesses
@@ -178,7 +182,8 @@ export default function Home() {
         </Link>
 
       </section>
-
     </main>
+    <Footer />
+    </>
   )
 }
