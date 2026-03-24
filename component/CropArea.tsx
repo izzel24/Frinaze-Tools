@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import Cropper from 'react-easy-crop'
+import { AiOutlineScissor } from 'react-icons/ai'
 
 type Props = {
     setPreviewMode: React.Dispatch<React.SetStateAction<"preview" | "crop" | "compare">>
@@ -85,9 +86,9 @@ export default function CropArea({width, height, image, onCropComplete, setPrevi
                         setPreviewMode("preview")
                     }
                 }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-linear-to-b from-gray-100 to-gray-200 shadow-[0_0_3px_0_rgba(0,0,0,.25)] px-4 py-2 rounded text-xs"
+                className="absolute bottom-4 flex items-center gap-2 left-1/2 -translate-x-1/2 bg-linear-to-b from-gray-100 to-gray-200 shadow-[0_0_3px_0_rgba(0,0,0,.25)] px-4 py-2 rounded text-xs"
             >
-                Crop
+                Crop <AiOutlineScissor />
             </button>
         </div>
     )

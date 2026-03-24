@@ -386,7 +386,7 @@ export default function Image_Converter() {
                                 ))}
                                 <div className='col-span-full flex lg:flex-row flex-col items-center gap-2 px-5 w-full'>
                                     <div className='relative w-full'>
-                                            <input className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={width?.toString()} placeholder="Width" 
+                                            <input type='number' className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={width?.toString()} placeholder="Width" 
                                                 onChange={(e) => {
                                                     const newWidth = Number(e.target.value)
                                                     setWidth(newWidth)
@@ -402,7 +402,7 @@ export default function Image_Converter() {
                                             {lockRatio ? <IoMdLock />  : <IoMdUnlock />}
                                         </button>
                                         <div className='relative w-full'>
-                                            <input className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={height?.toString()} placeholder="Height" onChange={(e) => {
+                                            <input type='number' className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={height?.toString()} placeholder="Height" onChange={(e) => {
                                                 const newHeight = Number(e.target.value)
                                                 setHeight(newHeight)
                                                 setActiveButton(null)
