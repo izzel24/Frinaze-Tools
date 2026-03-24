@@ -13,7 +13,9 @@
     "nextjs-toast-notify": "^1.58.0",
     "qr-code-styling": "^1.9.2",
     "react": "19.2.3",
+    "react-compare-slider": "^4.0.0",
     "react-dom": "19.2.3",
+    "react-easy-crop": "^5.5.7",
     "react-icons": "^5.6.0",
     "validator": "^13.15.26",
     "zod": "^4.3.6"

@@ -5,6 +5,8 @@ import { PiSwap } from "react-icons/pi"
 import { RiLockPasswordFill } from "react-icons/ri"
 import Footer from "@/component/Footer"
 import Navbar from "@/component/Navbar"
+import { FaRegImage } from "react-icons/fa"
+import { LiaFileInvoiceSolid } from "react-icons/lia"
 
 export const metadata: Metadata = {
   title: "Frinaze Tools - Free Online Tools",
@@ -104,43 +106,44 @@ export default function Home() {
 
           </Link>
 
+          <Link
+            href="/image-optimizer"
+            className="group border border-gray-200 rounded-xl p-8 flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition"
+          >
 
-          <div className="border border-gray-200 rounded-xl p-8 flex flex-col gap-6 opacity-60">
-
-            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-gray-100">
-              <PiSwap className="text-3xl text-gray-700" />
+            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-blue-100">
+              <FaRegImage className="text-3xl text-blue-600" />
             </div>
 
             <div className="flex flex-col gap-2">
               <h3 className="text-xl font-semibold">
-                Image Converter
+                Image Optimizer
               </h3>
 
-              <p className="text-gray-600 text-sm">
-                Convert images between PNG, JPG, WebP and other formats.
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Optimize your image by adjust quality or crop your image
               </p>
             </div>
 
-            <span className="text-gray-500 text-sm">
-              Coming Soon
+            <span className="text-blue-600 font-medium group-hover:underline">
+              Open Tool →
             </span>
 
-          </div>
-
+          </Link>
 
           <div className="border border-gray-200 rounded-xl p-8 flex flex-col gap-6 opacity-60">
 
             <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-gray-100">
-              <RiLockPasswordFill className="text-3xl text-gray-700" /> 
+              <LiaFileInvoiceSolid className="text-3xl text-gray-700" /> 
             </div>
 
             <div className="flex flex-col gap-2">
               <h3 className="text-xl font-semibold">
-                Password Generator
+                Invoice Generator
               </h3>
 
               <p className="text-gray-600 text-sm">
-                Generate strong and secure passwords instantly.
+                {/* Generate strong and secure passwords instantly. */}
               </p>
             </div>
 

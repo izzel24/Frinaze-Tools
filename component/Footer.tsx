@@ -60,6 +60,16 @@ export default function Footer() {
                 QR Code Generator
               </a>
               </li>
+              <li>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://tools.frinaze.site/image-optimizer"
+                  className="underline underline-offset-2"
+                >
+                  Image Optimizer
+                </a>
+              </li>
 
               <li>More Tools (Coming Soon)</li>
             </ul>
