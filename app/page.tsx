@@ -21,7 +21,7 @@ export default function Home() {
     <main className="flex flex-col">
 
 
-      <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-[6vw] bg-gradient-to-b from-white to-blue-50 gap-6">
+      <section className="min-h-[80vh] pt-[120px] flex flex-col justify-center items-center text-center px-[6vw] bg-gradient-to-b from-white to-blue-50 gap-6">
 
         <h1 className="text-[9vw] lg:text-[3.5vw] font-black leading-tight">
           Free Online Tools
