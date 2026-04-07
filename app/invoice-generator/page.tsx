@@ -19,6 +19,41 @@ import { CgToday } from 'react-icons/cg'
 
 type EditableField = "name" | "qty" | "price"
 
+type Invoice = {
+    title: string
+    fromLabel: string
+    billToLabel: string
+    paymentDetailsLabel: string
+    dateLabel: string
+    paymentTermsLabel: string
+    dueDateLabel: string
+    poNumberLabel: string
+    balanceDueLabel: string
+    amountPaidLabel: string
+    notesLabel: string
+    notes: string
+    from: string
+    billTo: string
+    paymentDetails: string
+    invoiceNumber: string
+    date: string
+    paymentTerms: string
+    dueDate: string
+    poNumber: string
+    tableItem: string
+    tableQty: string
+    tablePrice: string
+    tableTotal: string
+    amountPaid: number
+}
+
+type FieldConfig = {
+    labelField: keyof Invoice
+    valueField: keyof Invoice
+    type: React.HTMLInputTypeAttribute
+    placeholder: string
+}
+
 export default function InvoiceGenerator() {
 
     const [pdfUrl, setPdfUrl] = useState<URL | null>(null);
@@ -32,7 +67,7 @@ export default function InvoiceGenerator() {
 
     const today = new Date().toISOString().split("T")[0]
 
-    const [invoice, setInvoice] = useState({
+    const [invoice, setInvoice] = useState<Invoice>({
         title: "INVOICE",
         fromLabel: "From",
         billToLabel: "Bill to",
@@ -305,7 +340,12 @@ export default function InvoiceGenerator() {
         setPdfUrl(doc.output("bloburl"))
     }
 
-   
+    const fields: FieldConfig[] = [
+        { labelField: "dateLabel", valueField: "date", type: "date", placeholder: "Date" },
+        { labelField: "paymentTermsLabel", valueField: "paymentTerms", type: "text", placeholder: "Ex: EOM (End of Month)" },
+        { labelField: "dueDateLabel", valueField: "dueDate", type: "date", placeholder: "Due Date" },
+        { labelField: "poNumberLabel", valueField: "poNumber", type: "text", placeholder: "Ex: PO-001" },
+    ]
 
     return (
         <>
@@ -456,23 +496,19 @@ export default function InvoiceGenerator() {
                                     </div>
                                 </div>
 
-                                {[
-                                    { labelField: "dateLabel", valueField: "date", type: "date", placeholder: "Date" },
-                                    { labelField: "paymentTermsLabel", valueField: "paymentTerms", type: "text", placeholder: "Ex: EOM (End of Month)" },
-                                    { labelField: "dueDateLabel", valueField: "dueDate", type: "date", placeholder: "Due Date" },
-                                    { labelField: "poNumberLabel", valueField: "poNumber", type: "text", placeholder: "Ex: PO-001" },
-                                ].map(({ labelField, valueField, type, placeholder }) => (
+                                {
+                                    fields.map(({ labelField, valueField, type, placeholder }) => (
                                     <div key={labelField} className='w-full flex sm:justify-between sm:items-center gap-4 sm:gap-2'>
                                         <input
                                             type="text"
-                                            value={invoice[labelField]}
+                                            value={invoice[labelField] as string}
                                             onChange={(e) => handleChange(labelField, e.target.value)}
                                             className='p-2 rounded border border-transparent focus:border-gray-200 focus:outline-none text-sm text-gray-600 sm:w-auto w-full'
                                         />
                                         <input
                                             type={type}
                                             placeholder={placeholder}
-                                            value={invoice[valueField]}
+                                            value={invoice[valueField] as string }
                                             onChange={(e) => handleChange(valueField, e.target.value)}
                                             className='p-2 rounded focus:outline-none bg-white shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full'
                                         />
@@ -722,7 +758,7 @@ export default function InvoiceGenerator() {
                     {pdfUrl && (
                         <div className='mt-4'>
                             <iframe
-                                src={pdfUrl}
+                                src={pdfUrl.toString()}
                                 width="100%"
                                 height="700px"
                                 className='rounded shadow'
