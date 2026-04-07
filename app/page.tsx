@@ -7,6 +7,7 @@ import Footer from "@/component/Footer"
 import Navbar from "@/component/Navbar"
 import { FaRegImage } from "react-icons/fa"
 import { LiaFileInvoiceSolid } from "react-icons/lia"
+import { IoDocumentTextOutline } from "react-icons/io5"
 
 export const metadata: Metadata = {
   title: "Frinaze Tools - Free Online Tools",
@@ -130,11 +131,13 @@ export default function Home() {
             </span>
 
           </Link>
+          <Link
+            href="/invoice-generator"
+            className="group border border-gray-200 rounded-xl p-8 flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition"
+          >
 
-          <div className="border border-gray-200 rounded-xl p-8 flex flex-col gap-6 opacity-60">
-
-            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-gray-100">
-              <LiaFileInvoiceSolid className="text-3xl text-gray-700" /> 
+            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-blue-100">
+              <IoDocumentTextOutline className="text-3xl text-blue-600" />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -142,16 +145,16 @@ export default function Home() {
                 Invoice Generator
               </h3>
 
-              <p className="text-gray-600 text-sm">
-                {/* Generate strong and secure passwords instantly. */}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                  Generate professional invoices for free
               </p>
             </div>
 
-            <span className="text-gray-500 text-sm">
-              Coming Soon
+            <span className="text-blue-600 font-medium group-hover:underline">
+              Open Tool →
             </span>
 
-          </div>
+          </Link>
 
         </div>
 

@@ -99,11 +99,9 @@ export default function QRGeneratorClient() {
   
     return (
       <main className='pt-[130px]'>
-        <div className='min-h-[500px] py-[5vw] bg-linear-to-b from-[#ffffff] to-[#3265f224] flex flex-col gap-10 justify-center px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw]'>
-  
+        <div className='min-h-[750px] py-[5vw] bg-linear-to-b from-[#ffffff] to-[#3265f224] flex flex-col gap-10 justify-top px-[5vw] portrait:lg:px-[6vw] lg:px-[10vw]'>
           <div className='flex flex-col gap-2'>
             <h1 className='text-[8.5vw] portrait:lg:text-[6vw] lg:text-[3.5vw] font-black'>Free QR Code Generator</h1>
-  
             <h2 className='text-[4vw] portrait:lg:text-[3.25vw] portrait:lg:w-[100%] lg:text-[1.65vw] lg:w-[60%]'>
               Generate custom QR codes for URLs, phone numbers, WiFi access and more.
             </h2>

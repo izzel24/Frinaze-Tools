@@ -19,6 +19,7 @@ import { RiImageAddLine } from 'react-icons/ri'
 import { RxGear } from 'react-icons/rx'
 import { TiSocialInstagram } from 'react-icons/ti'
 
+
 type formatType = "png" | "webp" | "jpeg" 
 type previewModeType = "preview" | "crop" | "compare"
 

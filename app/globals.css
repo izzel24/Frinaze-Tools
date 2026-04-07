@@ -23,6 +23,14 @@ canvas{
   @apply flex flex-col items-center justify-center gap-2 p-6 bg-white rounded-xl shadow hover:shadow-lg transition text-center font-medium;
 }
 
+input:focus{
+  outline: none;
+}
+
+input[type="text"]{
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
+}
+
 
 
 /* #range::-webkit-slider-thumb{
