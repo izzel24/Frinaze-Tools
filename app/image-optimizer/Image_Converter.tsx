@@ -22,7 +22,7 @@ import { RxGear } from 'react-icons/rx'
 import { TiSocialInstagram } from 'react-icons/ti'
 
 
-type formatType = "png" | "webp" | "jpeg" 
+type formatType = "png" | "webp" | "jpeg"
 type previewModeType = "preview" | "crop" | "compare"
 
 export default function Image_Converter() {
@@ -262,53 +262,53 @@ export default function Image_Converter() {
                                 </div>
                             ) : (
                                 <div className='relative w-full h-full flex items-center justify-center'>
-                                        <button className='absolute right-0 top-0 z-20 text-3xl text-gray-400' onClick={(e) => {e.preventDefault(); e.stopPropagation(); setSelectedImage(null); setConvertedUrl(null); setOriginalUrl(null); setCroppedImage(null); setHeight(0); setWidth(0)}}><IoMdCloseCircle /></button>
-                                        {previewMode === "preview" && (
-                                            <img
-                                                src={convertedUrl || croppedImage || originalUrl!}
-                                                alt="Preview"
-                                                className='object-contain max-h-[500px]'
-                                            />
-                                        )}
+                                    <button className='absolute right-0 top-0 z-20 text-3xl text-gray-400' onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedImage(null); setConvertedUrl(null); setOriginalUrl(null); setCroppedImage(null); setHeight(0); setWidth(0) }}><IoMdCloseCircle /></button>
+                                    {previewMode === "preview" && (
+                                        <img
+                                            src={convertedUrl || croppedImage || originalUrl!}
+                                            alt="Preview"
+                                            className='object-contain max-h-[500px]'
+                                        />
+                                    )}
 
-                                        {previewMode === "compare" && convertedUrl && (
-                                            <ReactCompareSlider
-                                                itemOne={
-                                                    <ReactCompareSliderImage
-                                                        src={ croppedImage || originalUrl!}
-                                                        alt="Original"
-                                                    />
+                                    {previewMode === "compare" && convertedUrl && (
+                                        <ReactCompareSlider
+                                            itemOne={
+                                                <ReactCompareSliderImage
+                                                    src={croppedImage || originalUrl!}
+                                                    alt="Original"
+                                                />
+                                            }
+                                            itemTwo={
+                                                <ReactCompareSliderImage
+                                                    src={convertedUrl}
+                                                    alt="Converted"
+                                                />
+                                            }
+                                        />
+                                    )}
+
+                                    {previewMode === "crop" && (
+                                        <CropArea
+                                            width={width}
+                                            height={height}
+                                            image={originalUrl!}
+                                            setPreviewMode={setPreviewMode}
+                                            onCropComplete={(croppedUrl) => {
+                                                setCroppedImage(croppedUrl)
+
+                                                const img = new Image()
+                                                img.onload = () => {
+                                                    setWidth(img.width)
+                                                    setHeight(img.height)
                                                 }
-                                                itemTwo={
-                                                    <ReactCompareSliderImage
-                                                        src={convertedUrl}
-                                                        alt="Converted"
-                                                    />
-                                                }
-                                            />
-                                        )}
-
-                                        {previewMode === "crop" && (
-                                            <CropArea
-                                                width={width}
-                                                height={height}
-                                                image={originalUrl!}
-                                                setPreviewMode={setPreviewMode}
-                                                onCropComplete={(croppedUrl) => {
-                                                    setCroppedImage(croppedUrl)
-
-                                                    const img = new Image()
-                                                    img.onload = () => {
-                                                        setWidth(img.width)
-                                                        setHeight(img.height)
-                                                    }
-                                                    img.src = croppedUrl
-                                                }}
-                                            />
-                                        )}
+                                                img.src = croppedUrl
+                                            }}
+                                        />
+                                    )}
                                 </div>
                             )}
-                            
+
 
 
                             <input
@@ -360,36 +360,36 @@ export default function Image_Converter() {
                         <div className='flex flex-col p-3 gap-2 rounded-lg shadow-[0_0_3px_0_rgba(0,0,0,0.25)] transition-all duration-500 '>
                             <div onClick={() => setResizeImage(!resizeImage)} className='flex justify-between items-center'>
                                 <h1 className='font-medium'>Resize Image</h1>
-                                <button onClick={()=> setResizeImage(!resizeImage)} title={resizeImage ? "Close resize image" : "Open resize image"} className={`font-medium text-xl ${resizeImage ? "rotate-45" : "rotate-0"} transition-transform origin-center `}>+</button>
+                                <button onClick={() => setResizeImage(!resizeImage)} title={resizeImage ? "Close resize image" : "Open resize image"} className={`font-medium text-xl ${resizeImage ? "rotate-45" : "rotate-0"} transition-transform origin-center `}>+</button>
                             </div>
                             {resizeImage &&
-                            <div className='grid grid-cols-2 sm:grid-cols-3 gap-3'>
-                                {presets.map((item) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => {
-                                            setWidth(item.width)
-                                            setHeight(item.height)
-                                            setActiveButton(item.id)
-                                        }}
-                                        className={`aspect-video shadow-[0_0_2px_0_rgba(0,0,0,0.25)] 
+                                <div className='grid grid-cols-2 sm:grid-cols-3 gap-3'>
+                                    {presets.map((item) => (
+                                        <button
+                                            key={item.id}
+                                            onClick={() => {
+                                                setWidth(item.width)
+                                                setHeight(item.height)
+                                                setActiveButton(item.id)
+                                            }}
+                                            className={`aspect-video shadow-[0_0_2px_0_rgba(0,0,0,0.25)] 
                                                 hover:bg-linear-to-b hover:from-white hover:bg-blue-100 hover:border hover:border-blue-200  rounded-lg flex flex-col items-center justify-center p-2 text-center ${width === item.width && height === item.height && activeButton === item.id ? "bg-linear-to-b from-white to-blue-200 border border-blue-200" : ""}
                                                 `}
-                                    >
-                                        <div className='text-2xl text-gray-600'>
-                                            {item.icon || <MdOutlineWebAsset />}
-                                        </div>
-                                        <p className='text-[10px] sm:text-xs'>
-                                            {item.label}
-                                        </p>
-                                        <span className='text-[9px] text-gray-400'>
-                                            {item.width}x{item.height}
-                                        </span>
-                                    </button>
-                                ))}
-                                <div className='col-span-full flex lg:flex-row flex-col items-center gap-2 px-5 w-full'>
-                                    <div className='relative w-full'>
-                                            <input type='number' className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={width?.toString()} placeholder="Width" 
+                                        >
+                                            <div className='text-2xl text-gray-600'>
+                                                {item.icon || <MdOutlineWebAsset />}
+                                            </div>
+                                            <p className='text-[10px] sm:text-xs'>
+                                                {item.label}
+                                            </p>
+                                            <span className='text-[9px] text-gray-400'>
+                                                {item.width}x{item.height}
+                                            </span>
+                                        </button>
+                                    ))}
+                                    <div className='col-span-full flex lg:flex-row flex-col items-center gap-2 px-5 w-full'>
+                                        <div className='relative w-full'>
+                                            <input type='number' className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={width?.toString()} placeholder="Width"
                                                 onChange={(e) => {
                                                     const newWidth = Number(e.target.value)
                                                     setWidth(newWidth)
@@ -398,11 +398,11 @@ export default function Image_Converter() {
                                                     if (lockRatio && ratio && newWidth > 0) {
                                                         setHeight(Math.round(ratio * newWidth))
                                                     }
-                                                }}/>
+                                                }} />
                                             <span className='absolute right-0 top-0 h-full flex items-center text-xs text-gray-600 bg-linear-to-b from-gray-200 to-gray-300 px-3 rounded-r-sm'>px</span>
-                                    </div>
+                                        </div>
                                         <button onClick={() => setLockRatio(!lockRatio)} className='text-center text-gray-400 p-3 hover:bg-gray-100 rounded-lg'>
-                                            {lockRatio ? <IoMdLock />  : <IoMdUnlock />}
+                                            {lockRatio ? <IoMdLock /> : <IoMdUnlock />}
                                         </button>
                                         <div className='relative w-full'>
                                             <input type='number' className='p-2 focus:outline-0 shadow-[0_0_2px_0_rgba(0,0,0,0.25)] w-full rounded-sm' value={height?.toString()} placeholder="Height" onChange={(e) => {
@@ -412,12 +412,12 @@ export default function Image_Converter() {
                                             }} />
                                             <span className='absolute right-0 top-0 h-full flex items-center text-xs text-gray-600 bg-linear-to-b from-gray-200 to-gray-300 px-3 rounded-r-sm'>px</span>
                                         </div>
-                                    {/* <input className='p-2 focus:outline-0 border' value={height?.toString()} placeholder="Height" onChange={(e) => setHeight(Number(e.target.value))} /> */}
+                                        {/* <input className='p-2 focus:outline-0 border' value={height?.toString()} placeholder="Height" onChange={(e) => setHeight(Number(e.target.value))} /> */}
+                                    </div>
                                 </div>
-                            </div>
                             }
                         </div>
-                    
+
                         <a
                             href={convertedUrl || ""}
                             download={`converted.${selectedFormat}`}
@@ -427,6 +427,91 @@ export default function Image_Converter() {
                         >
                             Download
                         </a>
+                    </div>
+
+                </div>
+            </section>
+            <section className="px-5 lg:px-30 py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto flex flex-col gap-12">
+
+                    {/* Title */}
+                    <div className="flex flex-col gap-4 max-w-2xl">
+                        <h2 className="text-4xl font-bold">
+                            How to Optimize Your Image
+                        </h2>
+                        <p className="text-gray-600">
+                            Easily reduce image size and improve loading speed for websites,
+                            marketplaces, and social media without losing quality.
+                        </p>
+                    </div>
+
+                    {/* Steps */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                        {/* Step 1 */}
+                        <div className="border rounded-2xl p-6 flex flex-col gap-4 bg-white">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-semibold">
+                                1
+                            </div>
+
+                            <h3 className="font-semibold text-lg">
+                                Upload Your Image
+                            </h3>
+
+                            <p className="text-sm text-gray-600">
+                                Drag & drop your image or click the upload button. Supports JPG,
+                                PNG, and WebP images up to 10MB.
+                            </p>
+                        </div>
+
+                        {/* Step 2 */}
+                        <div className="border rounded-2xl p-6 flex flex-col gap-4 bg-white">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-semibold">
+                                2
+                            </div>
+
+                            <h3 className="font-semibold text-lg">
+                                Crop or Resize
+                            </h3>
+
+                            <p className="text-sm text-gray-600">
+                                Adjust image dimensions using presets or custom width and height
+                                to match your needs.
+                            </p>
+                        </div>
+
+                        {/* Step 3 */}
+                        <div className="border rounded-2xl p-6 flex flex-col gap-4 bg-white">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-semibold">
+                                3
+                            </div>
+
+                            <h3 className="font-semibold text-lg">
+                                Choose Format & Quality
+                            </h3>
+
+                            <p className="text-sm text-gray-600">
+                                Select JPEG, PNG, or WebP and adjust compression quality to
+                                optimize the file size.
+                            </p>
+                        </div>
+
+                        {/* Step 4 */}
+                        <div className="border rounded-2xl p-6 flex flex-col gap-4 bg-white">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-semibold">
+                                4
+                            </div>
+
+                            <h3 className="font-semibold text-lg">
+                                Download Optimized Image
+                            </h3>
+
+                            <p className="text-sm text-gray-600">
+                                Download your optimized image instantly and use it for websites,
+                                social media, or online stores.
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
