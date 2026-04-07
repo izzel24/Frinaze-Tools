@@ -21,7 +21,7 @@ type EditableField = "name" | "qty" | "price"
 
 export default function InvoiceGenerator() {
 
-    const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+    const [pdfUrl, setPdfUrl] = useState<URL | null>(null);
     const [logo, setLogo] = useState<string | null>(null);
     const [currency, setCurrency] = useState("USD")
 
@@ -205,7 +205,7 @@ export default function InvoiceGenerator() {
         const splitNotes = doc.splitTextToSize(invoice.paymentDetails, 40)
         doc.text(splitNotes, 40, 66)
 
-        let startTableY = 75 + (splitNotes.length * 3)
+        const startTableY = 75 + (splitNotes.length * 3)
 
         autoTable(doc, {
             startY: startTableY,
