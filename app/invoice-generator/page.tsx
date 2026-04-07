@@ -17,6 +17,8 @@ import Image from 'next/image'
 import { RiDownloadLine } from 'react-icons/ri'
 import { CgToday } from 'react-icons/cg'
 
+type EditableField = "name" | "qty" | "price"
+
 export default function InvoiceGenerator() {
 
     const [pdfUrl, setPdfUrl] = useState<string | null>(null);
@@ -72,7 +74,7 @@ export default function InvoiceGenerator() {
         setItems(prev => [...prev, { name: "", qty: "1", price: "", total: 0 }])
     }
 
-    const updateItem = (index: number, field: string, value: any) => {
+    const updateItem = (index: number, field: EditableField , value: string ) => {
         setItems(prev => {
             const newItems = [...prev]
             const item = { ...newItems[index] }
