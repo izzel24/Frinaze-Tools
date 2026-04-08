@@ -70,6 +70,16 @@ export default function Footer() {
                   Image Optimizer
                 </a>
               </li>
+              <li>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://tools.frinaze.site/invoice-generator"
+                  className="underline underline-offset-2"
+                >
+                  Invoice Generator
+                </a>
+              </li>
 
               <li>More Tools (Coming Soon)</li>
             </ul>

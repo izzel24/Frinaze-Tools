@@ -269,7 +269,7 @@ export default function QRGeneratorClient() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <div className="border rounded-xl p-6 flex flex-col gap-2">
-              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">1</span>
+              <span className="text-blue-600 font-bold text-lg bg-blue-200 rounded-full flex items-center justify-center w-10 h-10">1</span>
               <h3 className="font-semibold">Choose QR Type</h3>
               <p className="text-gray-600 text-sm">
                 Select the type of QR code you want to generate such as URL,
@@ -278,7 +278,7 @@ export default function QRGeneratorClient() {
             </div>
 
             <div className="border rounded-xl p-6 flex flex-col gap-2">
-              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">2</span>
+              <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">2</span>
               <h3 className="font-semibold">Enter Your Information</h3>
               <p className="text-gray-600 text-sm">
                 Fill in the required details like a website link,
@@ -322,6 +322,80 @@ export default function QRGeneratorClient() {
               center of the QR code. This makes your QR codes more engaging
               and recognizable for customers.
             </p>
+
+          </div>
+
+          <div className="flex flex-col gap-3 lg:w-[70%]">
+
+            <h3 className="text-xl font-semibold">
+              What is a QR Code?
+            </h3>
+
+            <p className="text-gray-600">
+              A QR code (Quick Response code) is a type of two-dimensional barcode that
+              can store information such as website URLs, phone numbers, email addresses,
+              and WiFi credentials. Users can scan the code using a smartphone camera
+              or QR scanner to instantly access the stored information.
+            </p>
+
+            <p className="text-gray-600">
+              QR codes are widely used in marketing, restaurants, product packaging,
+              business cards, and digital payments because they make sharing information
+              fast and easy without typing long links or details.
+            </p>
+
+          </div>
+
+          <div className="flex flex-col gap-6 lg:w-[70%]">
+
+            <h3 className="text-xl font-semibold">
+              Frequently Asked Questions
+            </h3>
+
+            <div className="flex flex-col gap-4">
+
+              <div>
+                <h4 className="font-semibold">
+                  Is this QR Code Generator free?
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Yes, our QR Code Generator is completely free to use. You can create
+                  and download QR codes without any registration.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold">
+                  Can I customize my QR code?
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Yes, you can customize colors, shapes, and even upload your own logo
+                  to match your brand identity.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold">
+                  What formats can I download?
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  You can download your generated QR code in multiple formats such as
+                  PNG, SVG, JPEG, or WEBP depending on your needs.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold">
+                  Where can I use QR codes?
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  QR codes can be used for marketing campaigns, product packaging,
+                  restaurant menus, business cards, digital payments, and many other
+                  applications.
+                </p>
+              </div>
+
+            </div>
 
           </div>
 
