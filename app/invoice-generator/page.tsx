@@ -231,16 +231,17 @@ export default function InvoiceGenerator() {
         doc.text(invoice.billToLabel, 15, 62)
 
         doc.setFont('PlusJakartaSans-Bold', 'bold')
-        doc.text(invoice.billTo, 15, 66)
+        const splitBillTo = doc.splitTextToSize(invoice.billTo, 40)
+        doc.text(splitBillTo, 15, 66)
 
         doc.setFont('PlusJakartaSans-Regular', 'normal')
-        doc.text(invoice.paymentDetailsLabel, 40, 62)
+        doc.text(invoice.paymentDetailsLabel, 60, 62)
 
         doc.setFont('PlusJakartaSans-Bold', 'bold')
-        const splitNotes = doc.splitTextToSize(invoice.paymentDetails, 40)
-        doc.text(splitNotes, 40, 66)
+        const splitPaymentDetails = doc.splitTextToSize(invoice.paymentDetails, 38)
+        doc.text(splitPaymentDetails, 60, 66)
 
-        const startTableY = 75 + (splitNotes.length * 3)
+        const startTableY = 75 + (splitPaymentDetails.length >= splitBillTo.length ? splitPaymentDetails.length * 3 : splitBillTo.length * 3)
 
         autoTable(doc, {
             startY: startTableY,
