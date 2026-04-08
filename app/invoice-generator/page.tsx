@@ -530,7 +530,7 @@ export default function InvoiceGenerator() {
                                     </colgroup>
                                     <thead>
                                         <tr className='bg-gray-200'>
-                                            <th className='text-start px-2 py-1'>
+                                            <th className='text-start px-2 py-1 rounded-l'>
                                                 <input value={invoice.tableItem} onChange={(e) => handleChange("tableItem", e.target.value)} className='p-2 w-full border-b focus:outline-none font-semibold' />
                                             </th>
                                             <th className='text-start px-2 py-1'>
@@ -539,10 +539,10 @@ export default function InvoiceGenerator() {
                                             <th className='text-start px-2 py-1'>
                                                 <input value={invoice.tablePrice} onChange={(e) => handleChange("tablePrice", e.target.value)} className='p-2 w-full border-b focus:outline-none font-semibold' />
                                             </th>
-                                            <th className='text-start px-2 py-1'>
+                                            <th className='text-start px-2 py-1 '>
                                                 <input value={invoice.tableTotal} onChange={(e) => handleChange("tableTotal", e.target.value)} className='p-2 w-full border-b focus:outline-none font-semibold' />
                                             </th>
-                                            <th />
+                                            <th className='rounded-r'/>
                                         </tr>
                                     </thead>
                                     <tbody>
