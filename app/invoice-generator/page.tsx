@@ -206,17 +206,37 @@ export default function InvoiceGenerator() {
         doc.text(`# ${invoice.invoiceNumber === "" ? "1" : invoice.invoiceNumber}`, pageWidth - 20, 32, { align: "right" })
 
         const rightFields = [
-            [invoice.dateLabel, formatDate(invoice.date || new Date().toISOString().split('T')[0]), 43, 80],
-            [invoice.paymentTermsLabel, invoice.paymentTerms || "-", 48, 97],
-            [invoice.dueDateLabel, formatDate(invoice.dueDate || new Date().toISOString().split('T')[0]), 53, 87.5],
-            [invoice.poNumberLabel, invoice.poNumber || "-", 58, 91.5],
+            [invoice.dateLabel, formatDate(invoice.date || new Date().toISOString().split('T')[0]), 43],
+            [invoice.paymentTermsLabel, invoice.paymentTerms || "-", 48],
+            [invoice.dueDateLabel, formatDate(invoice.dueDate || new Date().toISOString().split('T')[0]), 53],
+            [invoice.poNumberLabel, invoice.poNumber || "-", 58],
         ]
+
         doc.setFontSize(10)
-        rightFields.forEach(([label, value, y, offset]) => {
+        doc.setFont('PlusJakartaSans-Regular', 'normal')
+
+        const maxLabelWidth = Math.max(
+            ...rightFields.map(([label]) => doc.getTextWidth(label as string))
+        )
+
+        const padding = 35
+        const valueMaxWidth = 60 
+        let y = 43
+
+        console.log(maxLabelWidth)
+
+        rightFields.forEach(([label, value]) => {
+            const xLabel = pageWidth - 20 - maxLabelWidth - padding
+            console.log(xLabel)
             doc.setFont('PlusJakartaSans-Regular', 'normal')
-            doc.text(label as string, pageWidth - (offset as number), y as number)
+            doc.text(label as string, xLabel, y as number, {align: "right"})
+
             doc.setFont('PlusJakartaSans-SemiBold', 'normal')
-            doc.text(value as string, pageWidth - 20, y as number, { align: "right" })
+
+            const splitValue = doc.splitTextToSize(value as string, valueMaxWidth)
+
+            doc.text(splitValue, pageWidth - 20, y as number, { align: "right" })
+            y += splitValue.length * 4
         })
 
         doc.setFillColor(240, 240, 240)
@@ -224,7 +244,7 @@ export default function InvoiceGenerator() {
 
         doc.setFont('PlusJakartaSans-Bold', 'bold')
         doc.setTextColor('#222222')
-        doc.text("Balance Due", pageWidth - 93, 67)
+        doc.text("Balance Due", pageWidth - 80, 67, { align: "right" })
         doc.text(formatMoney(balanceDue), pageWidth - 20, 67, { align: "right" })
 
         doc.setFont('PlusJakartaSans-Regular', 'normal')
