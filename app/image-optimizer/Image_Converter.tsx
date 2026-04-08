@@ -516,6 +516,89 @@ export default function Image_Converter() {
 
                 </div>
             </section>
+            <section className="px-5 lg:px-30 py-20 bg-white">
+                <div className="max-w-5xl flex flex-col gap-6">
+
+                    <h2 className="text-3xl font-bold">
+                        What is Image Optimization?
+                    </h2>
+
+                    <p className="text-gray-600">
+                        Image optimization is the process of reducing image file size while
+                        maintaining good visual quality. Optimized images load faster on
+                        websites, which improves user experience and helps websites perform
+                        better in search engines.
+                    </p>
+
+                    <p className="text-gray-600">
+                        Large images can slow down websites and increase bandwidth usage.
+                        By compressing images or converting them to more efficient formats
+                        such as WebP or JPEG, you can significantly reduce loading time
+                        without noticeable quality loss.
+                    </p>
+
+                    <p className="text-gray-600">
+                        Our Image Optimizer allows you to compress, resize, crop, and convert
+                        images easily. This makes it perfect for website owners, bloggers,
+                        designers, online stores, and anyone who wants faster-loading images.
+                    </p>
+
+                </div>
+            </section>
+            <section className="px-5 lg:px-30 py-20 bg-gray-50">
+                <div className="max-w-5xl flex flex-col gap-8">
+
+                    <h2 className="text-3xl font-bold">
+                        Frequently Asked Questions
+                    </h2>
+
+                    <div className="flex flex-col gap-6">
+
+                        <div>
+                            <h3 className="font-semibold">
+                                Is this image optimizer free to use?
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                                Yes, our image optimizer is completely free. You can compress,
+                                resize, and convert images without creating an account.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold">
+                                Will image compression reduce quality?
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                                Image compression slightly reduces file size by removing unnecessary
+                                data, but our tool is designed to maintain good visual quality
+                                while significantly reducing file size.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold">
+                                What image formats are supported?
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                                You can upload JPG, JPEG, PNG, and WebP images and convert them
+                                to different formats depending on your needs.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold">
+                                Why should I optimize images for websites?
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                                Optimized images load faster, improve user experience, reduce
+                                bandwidth usage, and can help improve SEO rankings in search engines.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
             <Footer />
         </>
     )
