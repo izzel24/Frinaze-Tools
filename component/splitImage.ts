@@ -1,6 +1,11 @@
 import JSZip from 'jszip'
 
-export const splitImage = (file: File, rows: number, cols: number ) => {
+type SplitImageResult = {
+    zipBlob: Blob
+    previews: string[]
+}
+
+export const splitImage = (file: File, rows: number, cols: number): Promise<SplitImageResult> => {
     return new Promise((resolve) => {
         const zip = new JSZip()
         const promises: Promise<void>[] = []

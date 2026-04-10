@@ -15,7 +15,7 @@ export default function ImageSplitter() {
 
     const [isDragging, setIsDragging] = useState<boolean>(false)
     const [file, setFile] = useState<File | null>(null)
-    const [previews, setPreviews] = useState([])
+    const [previews, setPreviews] = useState<string[]>([])
     const [row, setRow] = useState<string>("")
     const [col, setCol] = useState<string>("")
     const [zipUrl, setZipUrl] = useState<string | null>(null)
@@ -94,20 +94,27 @@ export default function ImageSplitter() {
 
     const handleSplit = async () => {
         if (!file) return
-        setIsLoading(true)
 
+        try {
+            setIsLoading(true)
 
-        const { zipBlob, previews } = await splitImage(file, Number(row), Number(col))
+            const { zipBlob, previews } = await splitImage(file, Number(row), Number(col))
 
-        setPreviews(previews)
-        const url = URL.createObjectURL(zipBlob)
-        setZipUrl(url)
-        setIsLoading(false)
+            setPreviews(previews)
 
+            const url = URL.createObjectURL(zipBlob)
+            setZipUrl(url)
 
+        } catch (err) {
+            console.error(err)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const handleDownload = () => {
+
+        if(!zipUrl) return
 
         const link = document.createElement("a")
         link.href = zipUrl
