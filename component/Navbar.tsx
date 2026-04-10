@@ -67,7 +67,7 @@ export default function Navbar() {
 
         <li className="h-full relative">
           <Link
-            href="/#tools"
+            href="/tools"
             className={`h-full flex items-center px-2 relative
             before:content-[''] before:absolute before:h-[.15vw]
             before:bg-[#197ADB] before:w-full before:bottom-1.5
@@ -131,7 +131,7 @@ export default function Navbar() {
         <div className='border-t w-full h-[.5px] bg-black opacity-5' />
         <ul className='w-full h-full flex flex-col'>
           <Link href="/#home" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>Home</Link>
-          <Link href="/#tools" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>Tools</Link>
+          <Link href="/tools" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>Tools</Link>
           <Link href="/#about" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>About</Link>
           <Link href="https://frinaze.site" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>Make a Website</Link>
           {/* <Link href="/articles" onClick={() => setNavbarOpen(false)} className='text-[#1F3F6E] text-[3.5vw] w-full p-[4vw]'>Articles</Link> */}

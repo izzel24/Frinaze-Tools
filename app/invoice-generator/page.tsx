@@ -374,8 +374,6 @@ export default function InvoiceGenerator() {
             <section className="min-h-[750px] pt-[150px] bg-gradient-to-b from-white to-blue-100 flex items-center justify-center px-6 pb-20">
 
                 <div className="max-w-5xl w-full flex flex-col items-center gap-8 text-center">
-
-                    {/* Heading */}
                     <div className="flex flex-col gap-4">
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
                             Free Invoice Generator
@@ -384,12 +382,10 @@ export default function InvoiceGenerator() {
                         <h2 className='text-2xl'>A simple and free way to generate professional invoices online.</h2>
                     </div>
 
-                    {/* CTA */}
-                    <a href='#generateInvoice' className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 text-white text-lg rounded-lg shadow-lg hover:shadow-xl">
+                    <a href='#generateInvoice' className="bg-blue-600 transition px-8 py-3 text-white text-lg rounded-xl shadow-lg ">
                         Generate Invoice Now
                     </a>
 
-                    {/* Image preview */}
                     <div className="relative w-full max-w-2xl h-[450px] rounded-t-lg overflow-hidden">
 
                         <Image
@@ -398,8 +394,6 @@ export default function InvoiceGenerator() {
                             fill
                             className="object-cover object-top opacity-80"
                         />
-
-                        {/* gradient fade */}
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-60% via-blue-50/70 to-blue-100"></div>
 
                     </div>
@@ -410,11 +404,7 @@ export default function InvoiceGenerator() {
             <section id='generateInvoice'>
                 <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 py-5'>
                     <div className='flex flex-col gap-4 px-4 sm:px-5 py-5 shadow-[0_0_3px_0_rgba(0,0,0,0.25)] rounded-4xl'>
-
-                        {/* Header: Logo + From/BillTo | Title + Fields */}
                         <div className='flex flex-col sm:flex-row w-full gap-6 shadow-[0_0_4px_0_rgba(0,0,0,0.25)] p-4 rounded-xl'>
-
-                            {/* Left */}
                             <div className='flex flex-col w-full sm:w-[45%] p-2 gap-2'>
                                 <div className='flex p-2'>
                                     {logo ? (
@@ -492,10 +482,7 @@ export default function InvoiceGenerator() {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Right */}
                             <div className='flex flex-col gap-2 w-full sm:w-[55%] items-start sm:items-end'>
-
                                 <input
                                     type="text"
                                     placeholder='Title'
@@ -537,8 +524,6 @@ export default function InvoiceGenerator() {
                                 ))}
                             </div>
                         </div>
-
-                        {/* Table */}
                         <div className='p-4 rounded-xl shadow-[0_0_4px_0_rgba(0,0,0,0.25)] flex flex-col items-center'>
                             <div className='overflow-x-auto w-full'>
                                 <table className='w-full min-w-[500px]'>
@@ -643,9 +628,6 @@ export default function InvoiceGenerator() {
                         </div>
 
                         <div className='border-[0.5px] border-gray-400 border-dashed w-full' />
-
-
-                        {/* Extras */}
                         <div className="flex flex-col items-end gap-2 w-full shadow-[0_0_4px_0_rgba(0,0,0,0.25)] p-4 rounded-xl">
 
                             {showTax ? (
@@ -750,25 +732,25 @@ export default function InvoiceGenerator() {
                                     <select
                                         value={currency}
                                         onChange={(e) => setCurrency(e.target.value)}
-                                        className='p-2 w-full rounded focus:outline-none relative z-20 appearance-none shadow-[0_0_2px_0_rgba(0,0,0,0.25)] '
+                                        className='p-2 w-full rounded-lg focus:outline-none relative z-20 appearance-none shadow-[0_0_2px_0_rgba(0,0,0,0.25)] '
                                     >
                                         <option value="USD">USD</option>
                                         <option value="IDR">IDR</option>
                                         <option value="EUR">EUR</option>
                                     </select>
-                                    <div className='absolute top-0 right-0 h-full flex items-center bg-linear-to-b z-10 from-gray-200 to-gray-300 px-2 rounded-r' >
+                                    <div className='absolute top-0 right-0 h-full flex items-center bg-linear-to-b z-10 from-gray-200 to-gray-300 px-2 rounded-r-lg' >
                                         <MdKeyboardArrowDown className='' />
                                     </div>
                                 </div>
                                 <button
-                                    className='p-2 bg-blue-600 hover:bg-blue-600 flex items-center gap-2 text-white rounded transition-colors flex-1 sm:flex-none sm:px-8'
+                                    className='p-2 bg-blue-600 hover:bg-blue-600 flex items-center gap-2 text-white rounded-lg transition-colors flex-1 sm:flex-none sm:px-8'
                                     onClick={previewInvoice}
                                 >
                                     <MdOutlineRemoveRedEye /> Preview Invoice
                                 </button>
                             </div>
                             <button
-                                className='p-2 bg-blue-600 hover:bg-blue-600 flex items-center gap-2 text-white rounded transition-colors flex-1 sm:flex-none sm:px-8'
+                                className='p-2 bg-blue-600 hover:bg-blue-600 flex items-center gap-2 text-white rounded-lg transition-colors flex-1 sm:flex-none sm:px-8'
                                 onClick={downloadInvoice}
                             >
                                 <RiDownloadLine /> Download Invoice

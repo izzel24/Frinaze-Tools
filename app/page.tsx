@@ -1,18 +1,15 @@
 import Link from "next/link"
 import { HiOutlineQrcode } from "react-icons/hi"
 import { Metadata } from "next"
-import { PiSwap } from "react-icons/pi"
-import { RiLockPasswordFill } from "react-icons/ri"
 import Footer from "@/component/Footer"
 import Navbar from "@/component/Navbar"
 import { FaRegImage } from "react-icons/fa"
-import { LiaFileInvoiceSolid } from "react-icons/lia"
 import { IoDocumentTextOutline } from "react-icons/io5"
 
 export const metadata: Metadata = {
-  title: "Frinaze Tools - Free Online Tools",
+  title: "Frinaze Tools | Free Online Tools for Images, QR Codes, Invoices & More",
   description:
-    "Free online tools including QR Code Generator and other useful utilities to simplify your workflow.",
+    "Use free online tools from Frinaze to generate QR codes, optimize images, create invoices, split images, and more. Fast, simple, and no signup required.",
 }
 
 export default function Home() {
@@ -22,15 +19,14 @@ export default function Home() {
     <main className="flex flex-col">
 
 
-      <section className="min-h-[80vh] pt-[120px] flex flex-col justify-center items-center text-center px-[6vw] bg-gradient-to-b from-white to-blue-50 gap-6">
+      <section className="min-h-[750px] pt-[120px] flex flex-col justify-center items-center text-center px-[6vw] bg-gradient-to-b from-white to-blue-100 gap-6">
 
         <h1 className="text-[9vw] lg:text-[3.5vw] font-black leading-tight">
-          Free Online Tools
+            Free Online Tools for Everyday Tasks
         </h1>
 
         <p className="text-[4vw] lg:text-[1.4vw] text-gray-600 max-w-[700px]">
-          Simple and powerful tools to make your daily tasks easier.
-          Generate QR codes and use other utilities completely free.
+            Simple, fast, and free tools to help you work smarter. All in one place.
         </p>
 
         <div className="flex gap-4 flex-wrap justify-center">
@@ -155,9 +151,10 @@ export default function Home() {
             </span>
 
           </Link>
-
         </div>
-
+        <div className="w-full">
+          <a href="/tools" className="text-blue-600 font-medium hover:underline float-end">More Tools →</a>
+        </div>
       </section>
 
       <section id="about" className="py-24 bg-blue-700 text-white text-center flex flex-col gap-6 px-[6vw]">

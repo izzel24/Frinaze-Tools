@@ -6,7 +6,7 @@ export const convertImage = (file: File | Blob, format: string, quality: number,
             reader.onload = (e) => {
                 img.src = e.target?.result as string
             }
-
+            
             img.onload = () => {
                 const canvas = document.createElement('canvas')
                 const ctx = canvas.getContext('2d')
