@@ -142,7 +142,7 @@ export default function ImageSplitter() {
 
                         <div className="flex gap-4 mt-4">
                             <a
-                                href='#upload'
+                                href='#upload-section'
                                 className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
                             >
                                 Start Splitting
@@ -196,7 +196,7 @@ export default function ImageSplitter() {
 
                 </div>
             </section>
-            <section id='upload' className='px-4 sm:px-8 lg:portrait:px-10 lg:px-20 flex flex-col gap-5 py-20'>
+            <section id='upload-section' className='px-4 sm:px-8 lg:portrait:px-10 lg:px-20 flex flex-col gap-5 py-20'>
                 <div className='flex flex-col lg:portrait:flex-col lg:flex-row gap-4'>
                     <div className={`p-5 shadow-[0_0_3px_0_rgba(0,0,0,0.25)] rounded-[36px] flex flex-col gap-2  ${previews.length > 0 ? "lg:portrait:w-full lg:w-1/2 w-full" : "w-full"} transition-all duration-100 ease-in`}>
                         <label

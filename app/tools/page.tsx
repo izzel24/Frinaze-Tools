@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { HiOutlineQrcode, HiOutlineSearch } from "react-icons/hi"
 import Link from "next/link"
 import { FaRegImage } from 'react-icons/fa'
-import { IoDocumentTextOutline } from 'react-icons/io5'
+import { IoCloseSharp, IoDocumentTextOutline } from 'react-icons/io5'
 import { IoIosImages } from 'react-icons/io'
 
 type Tool = {
@@ -71,28 +71,33 @@ export default function Page() {
         <>
             <Navbar />
 
-            <section className='pt-[140px] py-20 flex flex-col items-center gap-4 justify-center'>
-                <h1 className='font-medium text-6xl'>All Productivity Tools</h1>
-                <h2 className='font-light text-2xl text-gray-400'>
+            <section className='pt-[140px] px-6 lg:px-20 py-20 flex flex-col items-center gap-4 justify-center'>
+                <h1 className='font-medium text-3xl lg:text-6xl'>All Productivity Tools</h1>
+                <h2 className='font-light text-lg text-center lg:text-2xl text-gray-400'>
                     Free tools to help you to work faster and smarter
                 </h2>
 
                 <form onSubmit={handleSubmit}>
-                    <div className='relative'>
+                    <div className='relative mt-4'>
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             type='text'
-                            className='w-full lg:min-w-[550px] p-3 mt-4 rounded-lg '
+                            className='w-full lg:min-w-[550px] p-3 px-12  rounded-lg '
                             placeholder='Search'
                         />
 
                         <button
                             type='submit'
-                            className='absolute top-0 right-0 h-full px-3 text-gray-400 text-lg'
+                            className='absolute top-0 left-0 h-full px-3 flex items-center text-gray-400 text-lg'
                         >
                             <HiOutlineSearch />
                         </button>
+                        {search !== "" &&
+                        <button type='reset' onClick={()=>setSearch('')} className='absolute text-gray-500 top-0 h-full right-0 px-4'>
+                            <IoCloseSharp />
+                        </button>
+                        }
                     </div>
                 </form>
 
