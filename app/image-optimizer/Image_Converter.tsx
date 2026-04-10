@@ -179,26 +179,58 @@ export default function Image_Converter() {
         <>
             <Navbar />
             <div className='pt-[130px] min-h-[750px] px-5 portrait:lg:px-10 lg:px-30 flex items-center justify-center flex-col lg:flex-row gap-10 lg:gap-20 bg-linear-to-b from-white to-blue-100 py-20'>
+
                 <div className='flex flex-col gap-5 lg:gap-10 items-start'>
-                    <div className='flex flex-col gap-2 lg:gap-4'>
-                        <h1 className='text-4xl sm:text-6xl font-bold'>Make Your Photo Lighter & Better</h1>
-                        <h2 className='text-base sm:text-2xl font-medium lg:w-[95%]'>Perfect for online stores, Instagram, and marketplaces. Optimize your images without losing quality.</h2>
+
+                    <div className='flex flex-col gap-3 lg:gap-4'>
+                        <h1 className='text-4xl sm:text-6xl font-bold leading-tight'>
+                            Make Your Photo
+                            <span className='text-blue-600'> Lighter & Better</span>
+                        </h1>
+                        <h2 className='text-base sm:text-2xl font-medium text-gray-600 lg:w-[95%]'>
+                            Perfect for online stores, Instagram, and marketplaces.
+                            Optimize your images without losing quality.
+                        </h2>
+
                     </div>
-                    <a href='#optimize' className='px-5 lg:px-10 rounded-lg lg:rounded-2xl py-3 lg:py-4 bg-blue-600 text-white flex gap-5 items-center text-xs lg:text-base'>Optimize Your Photo <IoIosArrowForward /></a>
+                    <div className='flex items-center gap-4 flex-wrap'>
+
+                        <a
+                            href='#optimize'
+                            className='px-5 lg:px-10 rounded-lg lg:rounded-2xl py-3 lg:py-4 bg-blue-600 text-white flex gap-3 items-center text-xs lg:text-base hover:bg-blue-700 transition'
+                        >
+                            Optimize Your Photo
+                            <IoIosArrowForward />
+                        </a>
+
+                        <span className='text-xs sm:text-sm text-gray-500'>
+                            Free • No signup required
+                        </span>
+
+                    </div>
+
                 </div>
-                <div className='relative lg:w-[55%]'>
-                    <ReactCompareSlider className='rounded-xl aspect-square' itemOne={<ReactCompareSliderImage src={"/IMG_1198.JPG"} alt='original' />} itemTwo={<ReactCompareSliderImage src={"/converted.webp"} alt='original' />} />
-                    <div className='grid grid-cols-2 absolute w-full bottom-2 z-10 items-center justify-items-center'>
+
+                <div className='relative lg:w-[55%] p-5 rounded-[32px] bg-white shadow-[0_0_3px_0_rgba(0,0,0,0.25)]'>
+                    <ReactCompareSlider
+                        className='rounded-xl aspect-square'
+                        itemOne={<ReactCompareSliderImage src={"/IMG_1198.JPG"} alt='original' />}
+                        itemTwo={<ReactCompareSliderImage src={"/converted.webp"} alt='converted' />}
+                    />
+
+                    <div className='grid grid-cols-2 absolute w-full left-0 bottom-10 z-10 items-center justify-items-center'>
                         <div className='bg-gray-200/50 rounded-2xl flex flex-col gap-1 py-1 px-2'>
                             <h3 className='text-center text-gray-800 text-xs'>Original Image</h3>
-                            <p className='text-center  text-gray-800 text-xs'>3.8 MB</p>
+                            <p className='text-center text-gray-800 text-xs'>3.8 MB</p>
                         </div>
+
                         <div className='bg-gray-200/50 rounded-2xl flex flex-col gap-1 py-1 px-2'>
-                            <h3 className='text-center text-gray-800 text-xs'>Converted Image</h3>
-                            <p className='text-center  text-gray-800 text-xs'>655 KB</p>
+                            <h3 className='text-center text-gray-800 text-xs'>Optimized Image</h3>
+                            <p className='text-center text-gray-800 text-xs'>655 KB</p>
                         </div>
                     </div>
                 </div>
+
             </div>
             <section id='optimize' className='min-h-[400px] px-5 portrait:lg:px-10 lg:px-30 py-20'>
                 <div className='grid portrait:lg:grid-cols-1 lg:grid-cols-5 gap-4'>

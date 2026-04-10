@@ -371,35 +371,68 @@ export default function InvoiceGenerator() {
     return (
         <>
             <Navbar />
-            <section className="min-h-[750px] pt-[150px] bg-gradient-to-b from-white to-blue-100 flex items-center justify-center px-6 pb-20">
+            <section className="pt-[130px] pb-24 px-6 lg:px-20 bg-gradient-to-b from-white to-blue-100">
+                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="flex flex-col gap-6">
 
-                <div className="max-w-5xl w-full flex flex-col items-center gap-8 text-center">
-                    <div className="flex flex-col gap-4">
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-                            Free Invoice Generator
+                        <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                            Create Professional <span className="text-blue-600">Invoices</span>
+                            <br />
+                            in Seconds
                         </h1>
 
-                        <h2 className='text-2xl'>A simple and free way to generate professional invoices online.</h2>
+                        <p className="text-xl text-gray-600 max-w-xl">
+                            Generate clean and professional invoices instantly.
+                            Add items, taxes, discounts, and export your invoice as PDF.
+                        </p>
+
+                        <div className="flex gap-4 mt-4">
+
+                            <a
+                                href="#generateInvoice"
+                                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
+                            >
+                                Generate Invoice
+                            </a>
+
+                            <span className="flex items-center text-gray-500 text-sm">
+                                Free • No signup required
+                            </span>
+
+                        </div>
+                        <div className="flex flex-wrap gap-3 mt-4 text-sm text-gray-600">
+                            <span className="px-3 py-1 bg-white rounded-full shadow">
+                                PDF Export
+                            </span>
+                            <span className="px-3 py-1 bg-white rounded-full shadow">
+                                Multi Currency
+                            </span>
+                            <span className="px-3 py-1 bg-white rounded-full shadow">
+                                Tax & Discount
+                            </span>
+                        </div>
+
                     </div>
+                    <div className="relative">
 
-                    <a href='#generateInvoice' className="bg-blue-600 transition px-8 py-3 text-white text-lg rounded-xl shadow-lg ">
-                        Generate Invoice Now
-                    </a>
+                        <div className="bg-white rounded-2xl shadow-[0_0_3px_0_rgba(0,0,0,0.25)] overflow-hidden border border-gray-200">
 
-                    <div className="relative w-full max-w-2xl h-[450px] rounded-t-lg overflow-hidden">
+                            <Image
+                                src="/InvoiceExample.jpg"
+                                alt="invoice example"
+                                width={900}
+                                height={600}
+                                className="object-cover"
+                            />
 
-                        <Image
-                            src="/InvoiceExample.jpg"
-                            alt="invoice example"
-                            fill
-                            className="object-cover object-top opacity-80"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-60% via-blue-50/70 to-blue-100"></div>
+                        </div>
+
+                        {/* Glow background */}
+                        <div className="absolute -z-10 w-full h-full bg-blue-200 blur-3xl opacity-30 top-8 left-8"></div>
 
                     </div>
 
                 </div>
-
             </section>
             <section id='generateInvoice'>
                 <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 py-5'>

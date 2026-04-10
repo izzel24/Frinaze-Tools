@@ -128,16 +128,75 @@ export default function ImageSplitter() {
     return (
         <>
             <Navbar />
-            <section className='min-h-[750px] pt-[130px] bg-linear-to-b from-transparent to-blue-100 px-20 flex items-center'>
-                <div className='flex flex-col'>
-                    <h1 className='text-6xl font-bold'>
-                        Easily split images into rows and columns.
-                    </h1>
-                    <h2 className='text-3xl'>Perfect for Instagram grids, puzzles, design layouts, or printing.</h2>
-                    <button></button>
+            <section className="pt-[130px] pb-20 px-6 lg:px-20 bg-linear-to-b from-white to-blue-100">
+                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="flex flex-col gap-6">
+                        <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                            Split Images Into <span className="text-blue-600">Perfect Grids</span>
+                        </h1>
+
+                        <p className="text-xl text-gray-600 max-w-xl">
+                            Easily split any image into rows and columns. Perfect for
+                            Instagram grids, design layouts, puzzles, or printing.
+                        </p>
+
+                        <div className="flex gap-4 mt-4">
+                            <a
+                                href='#upload'
+                                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
+                            >
+                                Start Splitting
+                            </a>
+
+                            <span className="flex items-center text-gray-500 text-sm">
+                                Free • No signup required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="relative">
+
+                        <div className="grid grid-cols-2 gap-3 p-4 bg-white rounded-2xl shadow-[0_0_3px_0_rgba(0,0,0,0.25)]">
+
+                            <Image
+                                src="/image-splitter/image-0-0.png"
+                                alt="split image"
+                                width={300}
+                                height={300}
+                                className="rounded-lg object-cover"
+                            />
+
+                            <Image
+                                src="/image-splitter/image-0-1.png"
+                                alt="split image"
+                                width={300}
+                                height={300}
+                                className="rounded-lg object-cover"
+                            />
+
+                            <Image
+                                src="/image-splitter/image-1-0.png"
+                                alt="split image"
+                                width={300}
+                                height={300}
+                                className="rounded-lg object-cover"
+                            />
+
+                            <Image
+                                src="/image-splitter/image-1-1.png"
+                                alt="split image"
+                                width={300}
+                                height={300}
+                                className="rounded-lg object-cover"
+                            />
+
+                        </div>
+
+                    </div>
+
                 </div>
             </section>
-            <div className='px-4 sm:px-8 lg:portrait:px-10 lg:px-20 flex flex-col gap-5 py-20'>
+            <section id='upload' className='px-4 sm:px-8 lg:portrait:px-10 lg:px-20 flex flex-col gap-5 py-20'>
                 <div className='flex flex-col lg:portrait:flex-col lg:flex-row gap-4'>
                     <div className={`p-5 shadow-[0_0_3px_0_rgba(0,0,0,0.25)] rounded-[36px] flex flex-col gap-2  ${previews.length > 0 ? "lg:portrait:w-full lg:w-1/2 w-full" : "w-full"} transition-all duration-100 ease-in`}>
                         <label
@@ -285,7 +344,7 @@ export default function ImageSplitter() {
                         Download All (ZIP)
                     </button>
                 )}
-            </div>
+            </section>
             <Footer />
         </>
     )
