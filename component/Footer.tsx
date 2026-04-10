@@ -80,6 +80,16 @@ export default function Footer() {
                   Invoice Generator
                 </a>
               </li>
+              <li>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://tools.frinaze.site/image-splitter"
+                  className="underline underline-offset-2"
+                >
+                  Image Splitter
+                </a>
+              </li>
 
               <li>More Tools (Coming Soon)</li>
             </ul>
@@ -113,12 +123,12 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row px-8 pb-4 pt-4 gap-2 lg:gap-0 justify-between items-center text-black/50 text-xs lg:text-sm font-semibold">
 
         <h2>© 2026 FRINAZE. All Rights Reserved.</h2>
-
+{/* 
         <div className="flex gap-2">
           <a href="/privacy-policy">Privacy Policy</a>
           <span>•</span>
           <a href="/terms-of-service">Terms of Service</a>
-        </div>
+        </div> */}
 
       </div>
     </footer>

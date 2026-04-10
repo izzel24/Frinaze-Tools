@@ -108,7 +108,7 @@ export default function Page() {
                             onClick={() => setCategory(cat)}
                             className={`px-5 py-2 rounded-lg text-sm font-medium transition
                             ${category === cat
-                                    ? 'bg-blue-500 text-white shadow'
+                                    ? 'bg-blue-600 text-white shadow'
                                     : 'text-gray-600 hover:bg-gray-200'
                                 }
                             `}
@@ -137,7 +137,7 @@ export default function Page() {
                                     {tool.name}
                                 </h3>
 
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
                                     {tool.description}
                                 </p>
                             </div>

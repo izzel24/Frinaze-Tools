@@ -142,7 +142,7 @@ export default function Home() {
               </h3>
 
               <p className="text-gray-600 text-sm leading-relaxed">
-                  Generate professional invoices for free
+                  Generate professional invoices for your business instantly.
               </p>
             </div>
 
