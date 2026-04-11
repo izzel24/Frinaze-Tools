@@ -803,6 +803,94 @@ export default function InvoiceGenerator() {
                     )}
                 </div>
             </section>
+            <section className="px-6 lg:px-20 py-20 bg-white">
+                <div className="max-w-7xl mx-auto flex flex-col gap-16">
+
+                    {/* HOW TO USE */}
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl lg:text-4xl font-bold">
+                            How to Create Your Invoice
+                        </h2>
+
+                        <p className="text-gray-600 max-w-2xl">
+                            Easily generate professional invoices in just a few steps. No signup required.
+                        </p>
+
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                            {[
+                                {
+                                    step: "1",
+                                    title: "Fill Your Info",
+                                    desc: "Enter your business details, client info, and invoice number."
+                                },
+                                {
+                                    step: "2",
+                                    title: "Add Items",
+                                    desc: "Add products or services with quantity and pricing."
+                                },
+                                {
+                                    step: "3",
+                                    title: "Customize",
+                                    desc: "Include tax, discount, shipping, and notes."
+                                },
+                                {
+                                    step: "4",
+                                    title: "Download",
+                                    desc: "Preview and export your invoice instantly as PDF."
+                                }
+                            ].map((item, i) => (
+                                <div key={i} className="border rounded-xl p-6 flex flex-col gap-2">
+
+                                    <span className="text-blue-600 font-bold text-lg w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">
+                                        {item.step}
+                                    </span>
+
+                                    <h3 className="font-semibold">{item.title}</h3>
+                                    <p className="text-gray-600 text-sm">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* FAQ */}
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl lg:text-4xl font-bold">
+                            Frequently Asked Questions
+                        </h2>
+
+                        <div className="flex flex-col gap-4 max-w-3xl">
+                            <div>
+                                <h3 className="font-semibold">Is this invoice generator free?</h3>
+                                <p className="text-gray-600 text-sm">
+                                    Yes, it's completely free to use. No signup or login required.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold">Can I add my logo?</h3>
+                                <p className="text-gray-600 text-sm">
+                                    Yes, you can upload your business logo and include it in the invoice.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold">Can I use different currencies?</h3>
+                                <p className="text-gray-600 text-sm">
+                                    Yes, you can switch between USD, IDR, and EUR easily.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold">Will my data be saved?</h3>
+                                <p className="text-gray-600 text-sm">
+                                    No, everything runs locally in your browser. Your data stays private.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
             <Footer />
         </>
     )
